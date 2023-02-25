@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -26,6 +27,11 @@ public class ReactiveMathController {
     @GetMapping("table/{input}")
     public Flux<Response> multiplicationTable(@PathVariable int input) {
         return this.mathService.multiplicationTable(input);
+    }
+
+    @GetMapping("table/mono/{input}")
+    public Mono<List<Response>> multiplicationTableMono(@PathVariable int input) {
+        return this.mathService.multiplicationTable(input).collectList();
     }
 
     @GetMapping(value = "table/{input}/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)

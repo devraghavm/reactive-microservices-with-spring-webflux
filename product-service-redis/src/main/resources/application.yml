@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/productdb
+    username: admin
+    password: admin
+#    pool:
+#      enabled: true
+#      initial-size: 50
+#      max-size: 100
+cache:
+  enabled: true

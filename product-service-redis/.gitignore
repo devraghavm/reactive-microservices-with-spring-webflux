@@ -35,12 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-### Docker ###
-**/**/docker-volume/
-
-### Mongo ###
-**/**/mongo/
-
-### Redis ###
-**/data/
